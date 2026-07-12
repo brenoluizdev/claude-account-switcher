@@ -24,6 +24,10 @@ It sits in the system tray and, on click, opens a small flyout panel listing you
 
 ## Installation
 
+### Download
+
+Grab the latest self-contained `ClaudeAccountSwitcher.exe` from the [Releases page](https://github.com/brenoluizdev/claude-account-switcher/releases/latest) — no build step, no .NET runtime install required. Just download and run it.
+
 ### Build from source
 
 ```powershell
