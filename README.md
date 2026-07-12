@@ -27,7 +27,7 @@ It sits in the system tray and, on click, opens a small flyout panel listing you
 ### Build from source
 
 ```powershell
-git clone https://github.com/<your-username>/claude-account-switcher.git
+git clone https://github.com/brenoluizdev/claude-account-switcher.git
 cd claude-account-switcher
 dotnet publish ClaudeAccountSwitcher/ClaudeAccountSwitcher.csproj -c Release
 ```
