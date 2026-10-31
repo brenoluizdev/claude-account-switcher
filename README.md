@@ -1,5 +1,9 @@
 # Claude Account Switcher
 
+[![CI](https://github.com/brenoluizdev/claude-account-switcher/actions/workflows/ci.yml/badge.svg)](https://github.com/brenoluizdev/claude-account-switcher/actions/workflows/ci.yml)
+![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?logo=dotnet&logoColor=white)
+![Plataforma](https://img.shields.io/badge/plataforma-Windows-0078D4?logo=windows&logoColor=white)
+
 A lightweight Windows system tray utility for managing multiple [Claude Code](https://claude.com/claude-code) CLI accounts side by side — for example, keeping a personal account and a work/freelance account fully isolated, without manually juggling environment variables or running `/login` and `/logout` every time you switch context.
 
 It sits in the system tray and, on click, opens a small flyout panel listing your configured accounts. Each account gets its own isolated credentials folder (via Claude Code's `CLAUDE_CONFIG_DIR` environment variable), and opening a terminal for an account launches a new Windows Terminal window already scoped to that account.

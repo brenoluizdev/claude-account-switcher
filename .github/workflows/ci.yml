@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build (.NET 8)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore
+        run: dotnet restore ClaudeAccountSwitcher/ClaudeAccountSwitcher.csproj
+
+      - name: Build
+        run: dotnet build ClaudeAccountSwitcher/ClaudeAccountSwitcher.csproj -c Release --no-restore
+
+      - name: Publicar executável único
+        run: dotnet publish ClaudeAccountSwitcher/ClaudeAccountSwitcher.csproj -c Release --no-build -o publish
+
+      - name: Guardar artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: ClaudeAccountSwitcher
+          path: publish/ClaudeAccountSwitcher.exe
+          retention-days: 7
